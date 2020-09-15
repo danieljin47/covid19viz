@@ -9,3 +9,4 @@ https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.appl
 https://python-visualization.github.io/folium  
 https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python/  
 https://docs.python.org/3/library/functions.html#format  
+https://python-visualization.github.io/folium/plugins.html?highlight=heatmap#folium.plugins.HeatMap  
