@@ -42,4 +42,11 @@ countryCoordinates=pd.read_csv('https://gist.githubusercontent.com/tadast/882769
 covidSummary3=pd.merge(covidSummary2,countryCoordinates,on='Country')
 covid_final=covidSummary3.drop(columns=['Alpha-2 code', 'Alpha-3 code', 'Numeric code'])
 
-
+def plotDot(point):
+    folium.CircleMarker(location=[point.latitude,point.longitude],
+                       radius=5,
+                       weight=2,
+                       popup=[point.Country,point.TotalConfirmed,point.TotalRecovered],
+                       fill_color='#000000').add_to(worldmap)
+    
+    covid_final.apply(plotDot,axis='columns')
