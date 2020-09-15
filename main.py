@@ -18,5 +18,9 @@ covidSummary = json.loads(data)
 df=pd.Dataframe(covidSummary['Country'])
 covidSummary2=df.drop(columns=['CountryCode','Slug','Date','Premium'])
 
+worldmap=folium.Map(tiles='Stamen Terrain')
+url='http://raw.githubusercontent.com/python-visualization/folium/master/examples/data'
+country_shapes=f'{url}/world-countries.json
+
 
 
