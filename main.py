@@ -37,3 +37,9 @@ folium.Choropleth(
 covidSummary2.update(covidSummary2['TotalConfirmed'].map('Total Confirmed:{}'.format))
 covidSummary2.update(covidSummary2['TotalRecovered'].map('Total Recovered:{}'.format))
 
+countryCoordinates=pd.read_csv('https://gist.githubusercontent.com/tadast/8827699/raw/3cd639fa34eec5067080a61c69e3ae25e3076abb/countries_codes_and_coordinates.csv')
+
+covidSummary3=pd.merge(covidSummary2,countryCoordinates,on='Country')
+covid_final=covidSummary3.drop(columns=['Alpha-2 code', 'Alpha-3 code', 'Numeric code'])
+
+
