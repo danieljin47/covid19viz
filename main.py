@@ -13,3 +13,8 @@ headers={}
 conn.request("GET","/summary",payload,headers)
 res=conn.getresponse()
 data=res.read().decode('UTF-8')
+
+covidSummary = json.loads(data)
+df=pd.Dataframe(covidSummary['Country'])
+covidSummary2=df.drop('CountryCode','Slug','Date','Premium',axis='columns')
+
