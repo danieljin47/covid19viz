@@ -1,2 +1,2 @@
 # covid19viz
-Geovisualization dashboard of COVID cases
+Geovisualization dashboard of COVID cases using covid19api
