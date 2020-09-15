@@ -49,4 +49,4 @@ def plotDot(point):
                        popup=[point.Country,point.TotalConfirmed,point.TotalRecovered],
                        fill_color='#000000').add_to(worldmap)
     
-    covid_final.apply(plotDot,axis='columns')
+covid_final.apply(plotDot,axis='columns')
