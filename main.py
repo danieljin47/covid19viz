@@ -33,5 +33,7 @@ folium.Choropleth(
     legend_name='Total Confirmed Covid Cases',
 ).add_to(worldmap)
 
-
+#map total confirmed figures to 'Total Confirmed:{}' interpolated format
+covidSummary2.update(covidSummary2['TotalConfirmed'].map('Total Confirmed:{}'.format))
+covidSummary2.update(covidSummary2['TotalRecovered'].map('Total Recovered:{}'.format))
 
