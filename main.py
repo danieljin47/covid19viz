@@ -20,7 +20,18 @@ covidSummary2=df.drop(columns=['CountryCode','Slug','Date','Premium'])
 
 worldmap=folium.Map(tiles='Stamen Terrain')
 url='http://raw.githubusercontent.com/python-visualization/folium/master/examples/data'
-country_shapes=f'{url}/world-countries.json
+country_boundaries=f'{url}/world-countries.json
+
+folium.Choropleth(
+    geo_data=country_boundaries,
+    name='Covid-19',
+    data=covidSummary2,
+    columns=['Country','TotalConfirmed'],
+    key_on='feature.properties.name',
+    fill_color='PuBuGn',
+    nan_fill_color='black',
+    legend_name='Total Confirmed Covid Cases',
+).add_to(worldmap)
 
 
 
